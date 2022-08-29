@@ -26,3 +26,8 @@ Solution: I thought about adding JSON locally. But since the instructions were t
 Issue: Styling with Material UI.
 
 Solution: I decided to use directly the Material UI components for their clean and minimalist styling, so hopefully I won't have so much more styling to do.
+
+4.
+Issue: Sorting the categories.
+
+Solution: I decided to make it so the categories are alphabetically sorted by default, because the random order from the response could confuse the user who could wonder where this order comes from... I had some struggle with the useEffect hook (either too many renders if required dependencies, or warning of missing dependency if no dependency), but I read a bit about useCallback hook and used it in my AZ sorting function to fix this issue.
