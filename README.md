@@ -23,7 +23,7 @@ Before I started, I planned how to achieve the code challenge. Here are the step
 * I added little details like the color for the footprint, an error404 page and a loader that mimics the cards for a neat look (Skeleton component from Material UI).
 * I finally created some unit tests for the `averageFootprintCalculation` function.
 
-### Problems and solutions
+### Issues and solutions
 
 1.
 
@@ -43,7 +43,7 @@ Before I started, I planned how to achieve the code challenge. Here are the step
 
 **Issue:** Styling with Material UI.
 
-**Solution:** I decided to use directly the Material UI components for their clean and minimalist styling, so hopefully I won't have so much more styling to do.
+**Solution:** I decided to use directly the Material UI components for their clean and minimalist styling, so I didn't have more styling to do.
 
 **If I had more time:** I would have try to make good use of much more possibilities of Material UI, since I used it only once before, and for a tiny project.
 
@@ -63,7 +63,7 @@ Before I started, I planned how to achieve the code challenge. Here are the step
 
 **Issue:** Nested fetch requests.
 
-**Solution:** I had some issue with the loading combine to fetch, leading to NaN instead of numbers for average footprint in App, so I decided to nest the 2nd fetch request inside the 1st one so it doesn't interfere with setIsLoading.
+**Solution:** I had some issue with the loading combined to fetch, leading to NaN instead of numbers for average footprint in App, so I decided to nest the 2nd fetch request inside the 1st one so it doesn't interfere with setIsLoading.
 
 **If I had more time:** I would have investigated for a cleaner way to do that, since it wouldn't be sustainable if I had multiple requests.
 
@@ -79,7 +79,7 @@ Before I started, I planned how to achieve the code challenge. Here are the step
 
 **Issue:** Unit testing.
 
-**Solution:** I have worked with unit tests only once before this, and never written any, but I did some research and tried at least to do some. I created some tests in `calc.test.ts` for the `averageFootprintCalculation` function. I made me realise that I had missed the possibility for a `categoryTransactions.length` of 0 in my calculation, so I fixed it.
+**Solution:** I have worked with unit tests only once before this, and never written any, but I did some research and tried at least to do some. I created some tests in `calc.test.ts` for the `averageFootprintCalculation` function. I made me realise that I had missed the possibility for a `categoryTransactions.length` of 0 in my calculation (which would have caused a division by 0), so I fixed it.
 
 **If I had more time:** I would have tried to do some tests on other parts of the code.
 
