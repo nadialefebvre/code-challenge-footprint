@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Container from "@mui/material/Container"
 
-import CategoryTransactions from "./pages/CategoryTransactions"
 import MyFootprint from "./pages/MyFootprint"
+import CategoryTransactions from "./pages/CategoryTransactions"
 import Error404 from "./pages/Error404"
-
 import { CategoriesJSON, TransactionsJSON } from "./types/types"
 import { CATEGORIES_API_URL, TRANSACTIONS_API_URL } from "./utils/urls"
 
@@ -30,7 +29,7 @@ const App: React.FC = () => {
   }, [])
 
   return (
-    <Container style={{ margin: "20px 0" }} maxWidth={false}>
+    <Container style={{ margin: "40px 0" }} maxWidth={false}>
       <BrowserRouter>
         <Routes>
           <Route

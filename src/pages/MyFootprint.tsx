@@ -13,7 +13,6 @@ import IconButton from "@mui/material/IconButton"
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
 
 import Loader from "../components/Loader"
-
 import { CategoriesJSON, Props } from "../types/types"
 import { averageFootprintCalculation } from "../utils/calc"
 

@@ -21,7 +21,6 @@ import ListItemText from "@mui/material/ListItemText"
 import Chip from "@mui/material/Chip"
 
 import Loader from "../components/Loader"
-
 import { Props } from "../types/types"
 
 // interface and styled from MaterialUI
