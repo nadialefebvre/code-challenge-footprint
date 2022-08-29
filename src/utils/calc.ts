@@ -5,11 +5,11 @@ export const averageFootprintCalculation = (
   transactions: TransactionsJSON
 ) => {
   const categoryTransactions = transactions.filter(
-    item => item.mainCategory === mainCategory
+    transaction => transaction.mainCategory === mainCategory
   )
 
   const totalFootprintForCategoryInGrams = categoryTransactions
-    .map(item => item.transaction.footprint.carbonEmissionInGrams)
+    .map(transaction => transaction.transaction.footprint.carbonEmissionInGrams)
     .reduce((prevValue: number, currValue: number) => prevValue + currValue, 0)
 
   const averageFootprintCategoryInKG = Math.round(
