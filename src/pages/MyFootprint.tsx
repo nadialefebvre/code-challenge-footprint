@@ -105,8 +105,18 @@ const MyFootprint: React.FC<Props> = ({
                     alignItems="center"
                   >
                     <Chip
-                      label="averageFootprint"
-                      color="warning"
+                      label={`${averageFootprintCalculation(
+                        category.mainCategory,
+                        transactions
+                      )} kg CO2e`}
+                      color={
+                        averageFootprintCalculation(
+                          category.mainCategory,
+                          transactions
+                        ) < 20
+                          ? "success"
+                          : "warning"
+                      }
                       variant="outlined"
                       sx={{ width: "150px" }}
                     />
