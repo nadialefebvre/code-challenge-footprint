@@ -21,6 +21,7 @@ Before I started, I planned how to achieve the code challenge. Here are the step
 * I quickly decided to use Material UI so I did the styling all along the project.
 * I did everything a little step at a time, to make sure everything was working and to detect bugs quickly, since I am very new to TypeScript, but also because I believe it's good practice.
 * I added little details like the color for the footprint, an error404 page and a loader that mimics the cards for a neat look (Skeleton component from Material UI).
+* I finally created some unit tests for the `averageFootprintCalculation` function.
 
 ### Problems and solutions
 
@@ -28,7 +29,7 @@ Before I started, I planned how to achieve the code challenge. Here are the step
 
 **Issue:** No prior knowledge of TypeScript
 
-**Solution:** I started by reading and watching some material on TypeScript and React/TypeScript. I did some small tutorials but with the time I had, I couldn't find much to help me with this assignment, so I decided to jump in and try with the assignment directly. I also found a website that helped me for interface/type setup: https://beshanoe.github.io/json2ts/, and I felt I understood it better after. I paid lots of attention to all the tooltips provided by VS Code, they were very helpful.
+**Solution:** I started by reading and watching some material on TypeScript and React/TypeScript. I did some small tutorials but with the time I had, I couldn't find much to help me with this assignment, so I decided to jump in and try with the assignment directly. I also found a website that helped me for interface/type setup: https://beshanoe.github.io/json2ts/, and I felt I understood it better after. I paid lots of attention to all the tooltips provided by VS Code, they were very helpful. They helped me to solve some tricky types.
 
 **If I had more time:** Of course I would have pushed my learning even more, but I will continue right away to make some projects with TypeScript.
 
@@ -74,9 +75,21 @@ Before I started, I planned how to achieve the code challenge. Here are the step
 
 **If I had more time:** I would have put more time on trying with Redux.
 
+8.
+
+**Issue:** Unit testing.
+
+**Solution:** I have worked with unit tests only once before this, and never written any, but I did some research and tried at least to do some. I created some tests in `calc.test.ts` for the `averageFootprintCalculation` function. I made me realise that I had missed the possibility for a `categoryTransactions.length` of 0 in my calculation, so I fixed it.
+
+**If I had more time:** I would have tried to do some tests on other parts of the code.
+
+9.
+
+**Issue:** Structured commits.
+
+**Solution:** I learned about conventional commits only recently and as I like clean and structured work, I try to use this structure, but I still have lots to learn and practice on naming my commits.
 
 
 ### Summary
------
 
 This project was fun to build. It was quite a challenge for me to use TypeScript to do it, but I feel that I've learned a lot from it. It was great to use Material UI since I didn't need to reinvent the wheel to have nice looking and minimalist little cards for all categories. It allowed me to focus more on understanding the differences between JavaScript and TypeScript, and to build this project in React/TypeScript. I am quite happy with the result and all the process.
