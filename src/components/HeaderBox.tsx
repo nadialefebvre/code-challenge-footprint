@@ -8,15 +8,15 @@ import ButtonGroup from "@mui/material/ButtonGroup"
 import Button from "@mui/material/Button"
 
 interface HeaderBoxProps {
-  breadcrumbsText?: string | undefined
+  breadcrumbsText?: string
   title: string
-  buttonGroup?: boolean
+  hasButtonGroup?: boolean
   sortAZ?: () => void
   sortImpact?: () => void
 }
 
 const HeaderBox: React.FC<HeaderBoxProps> = (props: HeaderBoxProps) => {
-  const { breadcrumbsText, title, buttonGroup, sortAZ, sortImpact } = props
+  const { breadcrumbsText, title, hasButtonGroup, sortAZ, sortImpact } = props
 
   const navigate = useNavigate()
 
@@ -40,7 +40,7 @@ const HeaderBox: React.FC<HeaderBoxProps> = (props: HeaderBoxProps) => {
         {title}
       </Typography>
       <Box sx={{ height: 40 }}>
-        {buttonGroup && (
+        {hasButtonGroup && (
           <ButtonGroup
             color="inherit"
             variant="text"

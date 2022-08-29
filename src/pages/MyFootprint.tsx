@@ -54,7 +54,7 @@ const MyFootprint: React.FC<GeneralProps> = (props: GeneralProps) => {
     <Container maxWidth="md">
       <HeaderBox
         title="My footprint"
-        buttonGroup
+        hasButtonGroup
         sortAZ={sortByMainCategoryAZ}
         sortImpact={sortByImpactInDescendingOrder}
       />
