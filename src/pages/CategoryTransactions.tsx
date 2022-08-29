@@ -70,85 +70,84 @@ const CategoryTransactions: React.FC<Props> = ({
     }
   })
 
-
   return (
     <Container maxWidth="md">
-    <Box sx={{ height: 40 }}>
-      <Breadcrumbs aria-label="breadcrumb">
-        <Link underline="hover" color="inherit" onClick={() => navigate("/")}>
-          My footprint
-        </Link>
-        <Typography color="text.primary">{mainCategory}</Typography>
-      </Breadcrumbs>
-    </Box>
-    <Typography align="center" variant="h2" color="text.secondary">
-      Transactions
-    </Typography>
-    <Box sx={{ height: 40 }}></Box>
-    <Stack spacing={4}>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        categorySubcategories?.map(subcategory => (
-          <Card key={subcategory.name}>
-            <Stack direction="row" justifyContent="space-between">
-              <CardContent>
-                <Typography variant="h5" color="text.secondary">
-                  {subcategory.name}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <ExpandMore
-                  expand={isExpanded}
-                  onClick={handleExpandClick}
-                  aria-expanded={isExpanded}
-                  aria-label="show more"
-                >
-                  <ExpandMoreIcon />
-                </ExpandMore>
-              </CardActions>
-            </Stack>
-            <Collapse in={isExpanded} timeout="auto" unmountOnExit>
-              <CardContent>
-                <List sx={{ width: "100%", bgcolor: "background.paper" }}>
-                  <Stack divider={<Divider flexItem light />}>
-                    {categoryTransactions
-                      .filter(
-                        transaction =>
-                          transaction.subCategory === subcategory.name
-                      )
-                      .map(item => (
-                        <ListItem key={uniqid()}>
-                          <ListItemText
-                            primary={item.transaction.description}
-                            secondary={`${item.transaction.amount.value} USD on ${item.transaction.madeOn}`}
-                          />
-                          <Chip
-                            label={`${Math.round(
-                              item.transaction.footprint
-                                .carbonEmissionInGrams / 1000
-                            )} kg CO2e`}
-                            color={
-                              item.transaction.footprint
-                                .carbonEmissionInGrams < 3000
-                                ? "success"
-                                : "warning"
-                            }
-                            size="small"
-                            variant="outlined"
-                            sx={{ width: "150px" }}
-                          />
-                        </ListItem>
-                      ))}
-                  </Stack>
-                </List>
-              </CardContent>
-            </Collapse>
-          </Card>
-        ))
-      )}
-    </Stack>
-  </Container>
+      <Box sx={{ height: 40 }}>
+        <Breadcrumbs aria-label="breadcrumb">
+          <Link underline="hover" color="inherit" onClick={() => navigate("/")}>
+            My footprint
+          </Link>
+          <Typography color="text.primary">{mainCategory}</Typography>
+        </Breadcrumbs>
+      </Box>
+      <Typography align="center" variant="h2" color="text.secondary">
+        Transactions
+      </Typography>
+      <Box sx={{ height: 40 }}></Box>
+      <Stack spacing={4}>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          categorySubcategories?.map(subcategory => (
+            <Card key={subcategory.name}>
+              <Stack direction="row" justifyContent="space-between">
+                <CardContent>
+                  <Typography variant="h5" color="text.secondary">
+                    {subcategory.name}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <ExpandMore
+                    expand={isExpanded}
+                    onClick={handleExpandClick}
+                    aria-expanded={isExpanded}
+                    aria-label="show more"
+                  >
+                    <ExpandMoreIcon />
+                  </ExpandMore>
+                </CardActions>
+              </Stack>
+              <Collapse in={isExpanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+                    <Stack divider={<Divider flexItem light />}>
+                      {categoryTransactions
+                        .filter(
+                          transaction =>
+                            transaction.subCategory === subcategory.name
+                        )
+                        .map(item => (
+                          <ListItem key={uniqid()}>
+                            <ListItemText
+                              primary={item.transaction.description}
+                              secondary={`${item.transaction.amount.value} USD on ${item.transaction.madeOn}`}
+                            />
+                            <Chip
+                              label={`${Math.round(
+                                item.transaction.footprint
+                                  .carbonEmissionInGrams / 1000
+                              )} kg CO2e`}
+                              color={
+                                item.transaction.footprint
+                                  .carbonEmissionInGrams < 3000
+                                  ? "success"
+                                  : "warning"
+                              }
+                              size="small"
+                              variant="outlined"
+                              sx={{ width: "150px" }}
+                            />
+                          </ListItem>
+                        ))}
+                    </Stack>
+                  </List>
+                </CardContent>
+              </Collapse>
+            </Card>
+          ))
+        )}
+      </Stack>
+    </Container>
   )
 }
 
