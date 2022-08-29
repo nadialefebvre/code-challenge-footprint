@@ -1,10 +1,10 @@
 import React from "react"
-import Chip from "@mui/material/Chip"
+import Chip, { ChipTypeMap } from "@mui/material/Chip"
 
 interface FootprintChipProps {
-  labelText: string
-  chipColor: any
-  size?: any
+  labelText: React.ReactNode
+  chipColor: ChipTypeMap["props"]["color"]
+  size?: ChipTypeMap["props"]["size"]
 }
 
 const FootprintChip: React.FC<FootprintChipProps> = (
