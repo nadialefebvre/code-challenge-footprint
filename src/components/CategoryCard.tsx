@@ -24,7 +24,7 @@ const CategoryCard: React.FC<CategoryCardProps> = (
   const navigate = useNavigate()
 
   return (
-    <Card key={category.mainCategoryID}>
+    <Card>
       <CardContent>
         <Stack
           direction="row"

@@ -39,6 +39,7 @@ const CategoryTransactions: React.FC<GeneralProps> = (props: GeneralProps) => {
         ) : (
           categorySubcategories?.map(subcategory => (
             <TransactionsCard
+              key={subcategory.name}
               subcategory={subcategory}
               categoryTransactions={categoryTransactions}
             />

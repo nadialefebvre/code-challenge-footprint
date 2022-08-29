@@ -1,5 +1,4 @@
 import React from "react"
-import uniqid from "uniqid"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
 
@@ -16,7 +15,7 @@ const TransactionItem: React.FC<TransactionItemProps> = (
   const { transaction } = props
 
   return (
-    <ListItem key={uniqid()}>
+    <ListItem>
       <ListItemText
         primary={transaction.transaction.description}
         secondary={`${transaction.transaction.amount.value} USD on ${transaction.transaction.madeOn}`}

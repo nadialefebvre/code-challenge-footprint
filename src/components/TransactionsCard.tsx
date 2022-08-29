@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import uniqid from "uniqid"
 import Stack from "@mui/material/Stack"
 import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
@@ -23,7 +24,7 @@ const TransactionsCard: React.FC<TransactionsCardProps> = (
   const [isExpanded, setIsExpanded] = useState<boolean>(false)
 
   return (
-    <Card key={subcategory.name}>
+    <Card>
       <SubcategoryItem
         setIsExpanded={setIsExpanded}
         isExpanded={isExpanded}
@@ -38,7 +39,7 @@ const TransactionsCard: React.FC<TransactionsCardProps> = (
                   transaction => transaction.subCategory === subcategory.name
                 )
                 .map(transaction => (
-                  <TransactionItem transaction={transaction} />
+                  <TransactionItem key={uniqid()} transaction={transaction} />
                 ))}
             </Stack>
           </List>

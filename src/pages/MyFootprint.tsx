@@ -63,7 +63,11 @@ const MyFootprint: React.FC<GeneralProps> = (props: GeneralProps) => {
           <Loader />
         ) : (
           sortedCategories.map(category => (
-            <CategoryCard category={category} transactions={transactions} />
+            <CategoryCard
+              key={category.mainCategoryID}
+              category={category}
+              transactions={transactions}
+            />
           ))
         )}
       </Stack>
