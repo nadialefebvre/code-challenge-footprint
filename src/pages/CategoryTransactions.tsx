@@ -14,6 +14,11 @@ import CardContent from "@mui/material/CardContent"
 import CardActions from "@mui/material/CardActions"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 import Collapse from "@mui/material/Collapse"
+import List from "@mui/material/List"
+import Divider from "@mui/material/Divider"
+import ListItem from "@mui/material/ListItem"
+import ListItemText from "@mui/material/ListItemText"
+import Chip from "@mui/material/Chip"
 
 import Loader from "../components/Loader"
 
@@ -49,6 +54,10 @@ const CategoryTransactions: React.FC<Props> = ({
   const handleExpandClick = () => {
     setIsExpanded(!isExpanded)
   }
+
+  const categoryTransactions = transactions.filter(
+    transaction => transaction.mainCategory === mainCategory
+  )
 
   const categorySubcategories = categories.length
     ? categories.find(category => category.mainCategory === mainCategory)
@@ -101,6 +110,30 @@ const CategoryTransactions: React.FC<Props> = ({
             </Stack>
             <Collapse in={isExpanded} timeout="auto" unmountOnExit>
               <CardContent>
+                <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+                  <Stack divider={<Divider flexItem light />}>
+                    {categoryTransactions
+                      .filter(
+                        transaction =>
+                          transaction.subCategory === subcategory.name
+                      )
+                      .map(item => (
+                        <ListItem key={uniqid()}>
+                          <ListItemText
+                            primary={item.transaction.description}
+                            secondary={`${item.transaction.amount.value} USD on ${item.transaction.madeOn}`}
+                          />
+                          <Chip
+                            label="footprint"
+                            color="warning"
+                            size="small"
+                            variant="outlined"
+                            sx={{ width: "150px" }}
+                          />
+                        </ListItem>
+                      ))}
+                  </Stack>
+                </List>
               </CardContent>
             </Collapse>
           </Card>
