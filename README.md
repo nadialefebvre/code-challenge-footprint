@@ -1,5 +1,4 @@
 # code-challenge-footprint
------
 
 ## Task for this technical test
 Build a TypeScript React app with two views:
@@ -8,13 +7,10 @@ Build a TypeScript React app with two views:
 
 * A dynamic detail page per category (fetch transaction data)
 -----
------
-
 
 ## My comments
 
 ### Planning
------
 
 Before I started, I planned how to achieve the code challenge. Here are the steps I went through:
 
