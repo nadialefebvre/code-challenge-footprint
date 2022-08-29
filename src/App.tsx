@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Container from "@mui/material/Container"
 
 import CategoryTransactions from "./pages/CategoryTransactions"
 import MyFootprint from "./pages/MyFootprint"
@@ -17,21 +18,22 @@ const App: React.FC = () => {
     setIsLoading(true)
     fetch(CATEGORIES_API_URL)
       .then(res => res.json())
-      .then(data => setCategories(data.record.categories))
+      .then(data => setCategories(data.categories))
       .then(() => {
         fetch(TRANSACTIONS_API_URL)
-        .then(res => res.json())
-        .then(data => setTransactions(data.record.transactions))
-        .then(() => setIsLoading(false))
-        .catch(err => console.log("error: ", err))
+          .then(res => res.json())
+          .then(data => setTransactions(data.transactions))
+          .then(() => setIsLoading(false))
+          .catch(err => console.log("error: ", err))
       })
       .catch(err => console.log("error: ", err))
   }, [])
 
   return (
-    <BrowserRouter>
-      <Routes>
-      <Route
+    <Container style={{ margin: "20px 0" }} maxWidth={false}>
+      <BrowserRouter>
+        <Routes>
+          <Route
             path="/"
             element={
               <MyFootprint
@@ -51,10 +53,11 @@ const App: React.FC = () => {
               />
             }
           />
-        <Route path="*" element={<Error404 />} />
-        <Route path="/error404" element={<Error404 />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="*" element={<Error404 />} />
+          <Route path="/error404" element={<Error404 />} />
+        </Routes>
+      </BrowserRouter>
+    </Container>
   )
 }
 
