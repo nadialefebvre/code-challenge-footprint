@@ -17,11 +17,11 @@ const App: React.FC = () => {
     setIsLoading(true)
     fetch(CATEGORIES_API_URL)
       .then(res => res.json())
-      .then(data => setCategories(data.categories))
+      .then(data => setCategories(data.record.categories))
       .then(() => {
         fetch(TRANSACTIONS_API_URL)
           .then(res => res.json())
-          .then(data => setTransactions(data.transactions))
+          .then(data => setTransactions(data.record.transactions))
           .then(() => setIsLoading(false))
           .catch(err => console.log("error: ", err))
       })
