@@ -31,3 +31,8 @@ Solution: I decided to use directly the Material UI components for their clean a
 Issue: Sorting the categories.
 
 Solution: I decided to make it so the categories are alphabetically sorted by default, because the random order from the response could confuse the user who could wonder where this order comes from... I had some struggle with the useEffect hook (either too many renders if required dependencies, or warning of missing dependency if no dependency), but I read a bit about useCallback hook and used it in my AZ sorting function to fix this issue.
+
+5.
+Issue: Splitting in smaller components.
+
+Solution: Since TypeScript is still very new to me, I struggle a bit to figure how to pass props/make interfaces, all the syntax about this, so at the moment I'm not able to make smaller components that would make my code more clean and reusable, but I'll keep trying until deadline.
