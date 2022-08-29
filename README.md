@@ -6,7 +6,6 @@ Build a TypeScript React app with two views:
 * A landing page listing and sorting categories with average carbon footprint per category (fetch transaction categories)
 
 * A dynamic detail page per category (fetch transaction data)
------
 
 ## My comments
 
@@ -24,7 +23,6 @@ Before I started, I planned how to achieve the code challenge. Here are the step
 * I added little details like the color for the footprint, an error404 page and a loader that mimics the cards for a neat look (Skeleton component from Material UI).
 
 ### Problems and solutions
------
 
 1.
 
