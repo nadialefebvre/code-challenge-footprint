@@ -1,6 +1,12 @@
 import React from "react"
 
-const MyFootprint: React.FC = () => {
+import { Props } from "../types/types"
+
+const MyFootprint: React.FC<Props> = ({
+  categories,
+  transactions,
+  isLoading,
+}: Props) => {
   return <div>MyFootprint</div>
 }
 

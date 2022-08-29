@@ -1,6 +1,12 @@
 import React from "react"
 
-const CategoryTransactions: React.FC = () => {
+import { Props } from "../types/types"
+
+const CategoryTransactions: React.FC<Props> = ({
+  categories,
+  transactions,
+  isLoading,
+}: Props) => {
   return <div>CategoryTransactions</div>
 }
 
