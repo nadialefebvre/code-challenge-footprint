@@ -18,7 +18,8 @@ const TransactionItem: React.FC<TransactionItemProps> = (
     <ListItem>
       <ListItemText
         primary={transaction.transaction.description}
-        secondary={`${transaction.transaction.amount.value} USD on ${transaction.transaction.madeOn}`}
+        secondary={`${transaction.transaction.amount.value}
+          ${transaction.transaction.amount.currency} on ${transaction.transaction.madeOn}`}
       />
       <FootprintChip
         labelText={`${Math.round(
