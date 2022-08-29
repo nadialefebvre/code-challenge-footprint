@@ -8,13 +8,21 @@ export const averageFootprintCalculation = (
     transaction => transaction.mainCategory === mainCategory
   )
 
-  const totalFootprintForCategoryInGrams = categoryTransactions
-    .map(transaction => transaction.transaction.footprint.carbonEmissionInGrams)
-    .reduce((prevValue: number, currValue: number) => prevValue + currValue, 0)
+  if (categoryTransactions.length > 0) {
+    const totalFootprintForCategoryInGrams = categoryTransactions
+      .map(
+        transaction => transaction.transaction.footprint.carbonEmissionInGrams
+      )
+      .reduce(
+        (prevValue: number, currValue: number) => prevValue + currValue,
+        0
+      )
 
-  const averageFootprintCategoryInKG = Math.round(
-    totalFootprintForCategoryInGrams / categoryTransactions.length / 1000
-  )
+    const averageFootprintCategoryInKG = Math.round(
+      totalFootprintForCategoryInGrams / categoryTransactions.length / 1000
+    )
+    return averageFootprintCategoryInKG
+  }
 
-  return averageFootprintCategoryInKG
+  return 0
 }
