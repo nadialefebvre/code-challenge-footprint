@@ -1,5 +1,3 @@
-// this website helped me for interface/type setup: https://beshanoe.github.io/json2ts/
-
 export type CategoriesJSON = IRootObjectCategories[]
 
 export interface IRootObjectCategories {
@@ -8,14 +6,14 @@ export interface IRootObjectCategories {
   subcategories: ISubcategory[]
 }
 
-interface ISubcategory {
+export interface ISubcategory {
   name: string
   id: number
 }
 
 export type TransactionsJSON = IRootObjectTransactions[]
 
-interface IRootObjectTransactions {
+export interface IRootObjectTransactions {
   transaction: ITransaction
   mainCategory: string
   subCategory: string
@@ -40,7 +38,7 @@ interface IFootprint {
   carbonEmissionInOunces: number
 }
 
-export type Props = {
+export type GeneralProps = {
   categories: CategoriesJSON
   transactions: TransactionsJSON
   isLoading: boolean
