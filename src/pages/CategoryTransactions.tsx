@@ -124,8 +124,16 @@ const CategoryTransactions: React.FC<Props> = ({
                             secondary={`${item.transaction.amount.value} USD on ${item.transaction.madeOn}`}
                           />
                           <Chip
-                            label="footprint"
-                            color="warning"
+                            label={`${Math.round(
+                              item.transaction.footprint
+                                .carbonEmissionInGrams / 1000
+                            )} kg CO2e`}
+                            color={
+                              item.transaction.footprint
+                                .carbonEmissionInGrams < 3000
+                                ? "success"
+                                : "warning"
+                            }
                             size="small"
                             variant="outlined"
                             sx={{ width: "150px" }}
