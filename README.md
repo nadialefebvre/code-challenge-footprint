@@ -89,6 +89,12 @@ Before I started, I planned how to achieve the code challenge. Here are the step
 
 **Solution:** I learned about conventional commits only recently and as I like clean and structured work, I try to use this structure, but I still have lots to learn and practice on naming my commits.
 
+10.
+
+**Issue:** Not unique key.
+
+**Solution:** I fixed the unique key issue discovered on the code review by moving the key attribute to the parent component where the map() is instead of the child component.
+
 
 ### Summary
 
