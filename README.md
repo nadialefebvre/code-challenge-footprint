@@ -1,4 +1,6 @@
-# code-challenge-footprint
+# Project My footprint
+
+My solution for a code test in a recruitment process: build a TypeScript React app
 
 ## Task for this technical test
 Build a TypeScript React app with two views:
