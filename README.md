@@ -106,3 +106,7 @@ https://code-challenge-footprint.netlify.app/
 ### Summary
 
 This project was fun to build. It was quite a challenge for me to use TypeScript to do it, but I feel that I've learned a lot from it. It was great to use Material UI since I didn't need to reinvent the wheel to have nice looking and minimalist little cards for all categories. It allowed me to focus more on understanding the differences between JavaScript and TypeScript, and to build this project in React/TypeScript. I am quite happy with the result and all the process.
+
+<div align="center">
+  <img src="screenshot.jpg" />
+</div>
