@@ -2,6 +2,16 @@
 
 My solution for a code test in a recruitment process: build a TypeScript React app
 
+## Tech stack
+
+- TypeScript
+- React
+- React Router
+- HTML
+- CSS
+- Material UI
+- API
+
 ## Task for this technical test
 Build a TypeScript React app with two views:
 
