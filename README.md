@@ -1,6 +1,6 @@
 # Project My footprint
 
-My solution for a code test in a recruitment process: build a TypeScript React app
+My solution for a code test in a recruitment process: build a TypeScript React app (June 2022)
 
 ## Tech stack
 
